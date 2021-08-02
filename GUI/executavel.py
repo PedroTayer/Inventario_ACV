@@ -1,6 +1,5 @@
 import os
 import sys
-# sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import matplotlib
 import pandas as pd
@@ -8,6 +7,8 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 
 from utils import pandasModel, coluna_fantasma, criterio_de_corte, alocar, calcular_inventario
+
+# sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 # Ensure using PyQt5 backend
 matplotlib.use('QT5Agg')
@@ -137,12 +138,6 @@ class MyApp(QMainWindow, Ui_MainWindow):  # gui class
 		modelm = pandasModel(round(self.M.reset_index().rename(columns={'index':'Produto'}).copy(), 3))
 		self.mostrar_table_view(self.ui.tvinva, modelinva, self.ui.tvbinva, modelbinva, self.ui.tvm, modelm)
 		self.ui.tabWidget.setCurrentIndex(2)
-
-
-
-
-
-
 
 
 
